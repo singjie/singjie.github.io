@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Lee Sing Jie]]></title>
-  <link href="http://singjie.com/atom.xml" rel="self"/>
-  <link href="http://singjie.com/"/>
-  <updated>2014-07-27T14:12:50+08:00</updated>
-  <id>http://singjie.com/</id>
+  <link href="http://singjie.github.io/atom.xml" rel="self"/>
+  <link href="http://singjie.github.io/"/>
+  <updated>2014-07-30T23:09:04+08:00</updated>
+  <id>http://singjie.github.io/</id>
   <author>
-    <name><![CDATA[singjie]]></name>
+    <name><![CDATA[singjie.com]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>

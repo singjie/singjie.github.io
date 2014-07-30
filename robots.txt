@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://singjie.com/sitemap.xml 
+Sitemap: http://singjie.github.io/sitemap.xml 
