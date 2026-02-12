@@ -275,6 +275,35 @@
       margin-top: 4px;
     }
 
+    /* Company groups */
+    .company-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .company-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .company-logo {
+      height: 22px;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .company-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text);
+    }
+
+    .company-group .project-card {
+      padding-left: 32px;
+    }
+
     /* Footer */
     footer {
       max-width: var(--max-width);
@@ -424,14 +453,30 @@
       <div class="project-group">
         <h3>Work</h3>
         <div class="project-list">
-          <div class="project-card">
-            <span class="project-name-only">BeeTalk</span>
+          <div class="company-group">
+            <div class="company-header">
+              <svg class="company-logo" viewBox="-4 -4 68 28" fill="none" stroke="#0081FB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Meta">
+                <path d="M30,10 C30,0 18,0 10,10 C2,20 30,20 30,10 C30,0 42,0 50,10 C58,20 30,20 30,10"/>
+              </svg>
+              <span class="company-name">Meta</span>
+            </div>
           </div>
-          <div class="project-card">
-            <span class="project-name-only">Garena Live</span>
-          </div>
-          <div class="project-card">
-            <span class="project-name-only">Garena+ Mobile</span>
+          <div class="company-group">
+            <div class="company-header">
+              <svg class="company-logo" viewBox="0 0 24 24" fill="none" stroke="#E8372E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Garena">
+                <path d="M20,7 A9,9 0 1,0 21,12 H13"/>
+              </svg>
+              <span class="company-name">Garena</span>
+            </div>
+            <div class="project-card">
+              <span class="project-name-only">BeeTalk</span>
+            </div>
+            <div class="project-card">
+              <span class="project-name-only">Garena Live</span>
+            </div>
+            <div class="project-card">
+              <span class="project-name-only">Garena+ Mobile</span>
+            </div>
           </div>
         </div>
       </div>
