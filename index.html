@@ -1,113 +1,589 @@
-
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Lee Sing Jie</title>
-	<meta name="author" content="singjie.com">
+  <meta charset="utf-8">
+  <title>Lee Sing Jie</title>
+  <meta name="author" content="Lee Sing Jie">
+  <meta name="description" content="Lee Sing Jie - Software Engineer based in Singapore. iOS and Web Developer with interests in robotics, photography, and Formula 1.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link href="/atom.xml" rel="alternate" title="Lee Sing Jie" type="application/atom+xml">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-	
-	<meta name="description" content=" Blog Archives
-">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    :root {
+      --color-bg: #fafafa;
+      --color-surface: #ffffff;
+      --color-text: #2d2d2d;
+      --color-text-secondary: #5a5a5a;
+      --color-accent: #3a7bd5;
+      --color-accent-hover: #2c5fa8;
+      --color-border: #e0e0e0;
+      --color-tag-bg: #f0f4fa;
+      --max-width: 720px;
+    }
 
-	<link href="/atom.xml" rel="alternate" title="Lee Sing Jie" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--color-accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 100;
+    }
+
+    nav .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    nav .nav-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    nav .nav-name:hover {
+      text-decoration: none;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--color-text);
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* Main content */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      padding-top: 56px;
+    }
+
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 96px 0 64px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .hero .social-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      padding: 6px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .hero .social-links a:hover {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+      text-decoration: none;
+      background: var(--color-tag-bg);
+    }
+
+    .hero .social-links svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Section headings */
+    section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      letter-spacing: -0.01em;
+    }
+
+    section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    /* Interests */
+    .interests-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .interest-tag {
+      padding: 8px 18px;
+      background: var(--color-tag-bg);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    /* Education */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .edu-item {
+      padding-left: 20px;
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .edu-item h3 {
+      margin-bottom: 4px;
+    }
+
+    .edu-item .degree {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .edu-item .year {
+      color: var(--color-text-secondary);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    /* Projects */
+    .project-group {
+      margin-bottom: 36px;
+    }
+
+    .project-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-group h3 {
+      margin-bottom: 16px;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .project-card {
+      padding: 16px 20px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      transition: border-color 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--color-accent);
+    }
+
+    .project-card .project-name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .project-card a {
+      font-size: 0.85rem;
+      word-break: break-all;
+    }
+
+    .project-card .project-name-only {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--color-text);
+    }
+
+    /* Baking */
+    .recipe-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .recipe-card {
+      padding: 20px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+    }
+
+    .recipe-card h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .recipe-card a {
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 4px;
+      word-break: break-all;
+    }
+
+    .recipe-card .note {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    /* Footer */
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--color-text-secondary);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--color-text-secondary);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero {
+        padding: 72px 0 48px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero .tagline {
+        font-size: 1.05rem;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .recipe-list {
+        grid-template-columns: 1fr;
+      }
+
+      nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        padding: 16px 24px;
+        gap: 16px;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      nav .nav-links.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
-	<header id="header" class="inner"><h1><a href="/">Lee Sing Jie</a></h1>
-<nav id="main-nav"><ul class="main">
-	<li><a href="/about">About</a></li>
-	<!-- <li><a href="/">Blog</a></li> -->
-	<!-- <li><a href="/blog/archives">Archives</a></li> -->
-	<li><a href="/projects">Projects</a></li>
-	<li><a href="/baking">Baking</a></li>
-</ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul class="main">
-	<li><a href="/about">About</a></li>
-	<!-- <li><a href="/">Blog</a></li> -->
-	<!-- <li><a href="/blog/archives">Archives</a></li> -->
-	<li><a href="/projects">Projects</a></li>
-	<li><a href="/baking">Baking</a></li>
-</ul>
-</div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="https://www.google.com/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:singjie.github.io">
-			</form>
-		</div>
-	</div>
-</nav>
-<nav id="sub-nav" class="alignright">
-	<div class="social">
-		
-		
-		
-		<a class="twitter" href="http://twitter.com/singjie" title="Twitter">Twitter</a>
-		
-		
-		<a class="github" href="https://github.com/singjie" title="GitHub">GitHub</a>
-		
-    
-		
-		
-		
-		
-		
-		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-		
-    
-	</div>
-	<form class="search" action="https://www.google.com/search" method="get">
-		<input class="alignright" type="text" name="q" results="0">
-		<input type="hidden" name="q" value="site:singjie.github.io">
-	</form>
-</nav>
 
-</header>
-	
-		
-	
-	<div id="content" class="inner">
+  <nav>
+    <div class="nav-inner">
+      <a href="#top" class="nav-name">Lee Sing Jie</a>
+      <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#baking">Baking</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<nav id="pagenavi">
-    
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <h1>Lee Sing Jie</h1>
+      <p class="tagline">Software Engineer from Singapore. Building iOS and web applications, with a love for gadgets, robotics, photography, and Formula 1.</p>
+      <div class="social-links">
+        <a href="https://github.com/singjie" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="http://twitter.com/singjie" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+          Twitter
+        </a>
+        <a href="http://www.facebook.com/singjie" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="http://youtube.com/leesingjie" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#fff" d="M9.545 15.568V8.432L15.818 12z"/></svg>
+          YouTube
+        </a>
+        <a href="http://photos.singjie.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm0-2a5 5 0 110 10 5 5 0 010-10zm6.5-.25a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 4c-2.474 0-2.878.007-3.906.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857C4.007 9.075 4 9.461 4 12c0 2.474.007 2.878.058 3.906.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058 2.474 0 2.878-.007 3.906-.058.975-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041 0-2.474-.007-2.878-.058-3.906-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 011.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772 4.915 4.915 0 01-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/></svg>
+          Photos
+        </a>
+      </div>
+    </section>
 
-    singjie.com
+    <!-- About / Interests -->
+    <section id="about">
+      <h2>About</h2>
+      <div class="interests-grid">
+        <span class="interest-tag">iOS Development</span>
+        <span class="interest-tag">Web Development</span>
+        <span class="interest-tag">Gadgets</span>
+        <span class="interest-tag">Robotics</span>
+        <span class="interest-tag">Photography</span>
+        <span class="interest-tag">Formula 1</span>
+      </div>
+    </section>
 
-</footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
+    <!-- Education -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="edu-list">
+        <div class="edu-item">
+          <h3>National University of Singapore</h3>
+          <div class="degree">Computer Engineering &ndash; 2nd Class Honours (Upper)</div>
+          <div class="year">2008 &ndash; 2011</div>
+        </div>
+        <div class="edu-item">
+          <h3>University of Oulu, Finland</h3>
+          <div class="degree">Computer Engineering &ndash; Student Exchange Programme</div>
+          <div class="year">2010</div>
+        </div>
+        <div class="edu-item">
+          <h3>Ngee Ann Polytechnic</h3>
+          <div class="degree">Electronic &amp; Computer Engineering &ndash; Diploma with Merit</div>
+          <div class="year">2003 &ndash; 2006</div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
 
+      <div class="project-group">
+        <h3>Work</h3>
+        <div class="project-list">
+          <div class="project-card">
+            <span class="project-name-only">BeeTalk</span>
+          </div>
+          <div class="project-card">
+            <span class="project-name-only">Garena Live</span>
+          </div>
+          <div class="project-card">
+            <span class="project-name-only">Garena+ Mobile</span>
+          </div>
+        </div>
+      </div>
 
+      <div class="project-group">
+        <h3>Personal</h3>
+        <div class="project-list">
+          <div class="project-card">
+            <span class="project-name">PeriodGo App</span><br>
+            <a href="https://itunes.apple.com/sg/app/periodgo/id900833657?mt=8" target="_blank" rel="noopener">App Store</a>
+          </div>
+          <div class="project-card">
+            <span class="project-name">Salary App</span><br>
+            <a href="https://itunes.apple.com/sg/app/salary-app/id892148298?mt=8" target="_blank" rel="noopener">App Store</a>
+          </div>
+          <div class="project-card">
+            <span class="project-name">Flashwants</span><br>
+            <a href="http://www.flashwants.com/" target="_blank" rel="noopener">flashwants.com</a>
+          </div>
+          <div class="project-card">
+            <span class="project-name">Ticktok</span><br>
+            <a href="http://www.ticktok.com.sg" target="_blank" rel="noopener">ticktok.com.sg</a>
+          </div>
+          <div class="project-card">
+            <span class="project-name">BTT SG</span><br>
+            <a href="http://bit.ly/btt-sg" target="_blank" rel="noopener">View project</a>
+          </div>
+          <div class="project-card">
+            <span class="project-name">FTT SG</span><br>
+            <a href="http://bit.ly/ftt-sg" target="_blank" rel="noopener">View project</a>
+          </div>
+          <div class="project-card">
+            <span class="project-name">iPad UAV Ground Control Station</span><br>
+            <a href="http://www.youtube.com/watch?v=fec5qvGooY0" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
+          <div class="project-card">
+            <span class="project-name">Wenyadesigns.com</span><br>
+            <a href="http://www.wenyadesigns.com" target="_blank" rel="noopener">wenyadesigns.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Baking -->
+    <section id="baking">
+      <h2>Baking</h2>
+      <p style="color: var(--color-text-secondary); margin-bottom: 24px;">Some of the recipes I have used.</p>
+      <div class="recipe-list">
+        <div class="recipe-card">
+          <h3>New York Cheesecake</h3>
+          <a href="http://allrecipes.com/Recipe/Chantals-New-York-Cheesecake/Detail.aspx" target="_blank" rel="noopener">allrecipes.com</a>
+        </div>
+        <div class="recipe-card">
+          <h3>Chocolate Cookie Cheesecake</h3>
+          <a href="http://allrecipes.com/Recipe/Chocolate-Cookie-Cheesecake/Detail.aspx" target="_blank" rel="noopener">allrecipes.com</a>
+        </div>
+        <div class="recipe-card">
+          <h3>Chocolate Chip Muffins</h3>
+          <a href="http://allrecipes.com/Recipe/Chocolate-Chip-Muffins/Detail.aspx" target="_blank" rel="noopener">allrecipes.com</a>
+        </div>
+        <div class="recipe-card">
+          <h3>Chocolate Chip Cookies</h3>
+          <a href="http://allrecipes.com/Recipe/Award-Winning-Soft-Chocolate-Chip-Cookies/Detail.aspx" target="_blank" rel="noopener">allrecipes.com</a>
+        </div>
+        <div class="recipe-card">
+          <h3>Pineapple Tarts</h3>
+          <a href="http://loykee.blogspot.com/2005/03/correct-recipe-for-pineapple-tarts.html" target="_blank" rel="noopener">loykee.blogspot.com</a>
+          <a href="http://www.thelittleteochew.com/2010/01/pineapple-tarts-buttery-melt-in-your.html" target="_blank" rel="noopener">thelittleteochew.com</a>
+          <p class="note">I prefer to use Phoon Huat's pineapple filling, less chores.</p>
+        </div>
+        <div class="recipe-card">
+          <h3>Laoban Beancurd</h3>
+          <a href="http://forums.hardwarezone.com.sg/eat-drink-man-woman-16/sharing-lao-ban-recipe-who-wants-3511441.html" target="_blank" rel="noopener">hardwarezone.com.sg</a>
+        </div>
+      </div>
+    </section>
 
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Get in touch at <a href="mailto:singjie@singjie.com">singjie@singjie.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 singjie.com
+  </footer>
+
+  <script>
+    // Close mobile nav when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+  </script>
 
 </body>
 </html>
