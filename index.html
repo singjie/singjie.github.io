@@ -275,6 +275,34 @@
       margin-top: 4px;
     }
 
+    .project-card .project-stats {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+    }
+
+    .project-card .project-stats .stars {
+      color: #f59e0b;
+      letter-spacing: -1px;
+    }
+
+    .project-card .project-badge {
+      font-size: 0.8rem;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .project-card .project-quote {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      font-style: italic;
+      margin-top: 4px;
+    }
+
     /* Footer */
     footer {
       max-width: var(--max-width);
@@ -453,11 +481,13 @@
         <div class="project-list">
           <div class="project-card">
             <span class="project-name">PeriodGo App</span> &middot;
-            <a href="https://itunes.apple.com/sg/app/periodgo/id900833657?mt=8" target="_blank" rel="noopener">App Store</a>
+            <a href="https://apps.apple.com/sg/app/periodgo/id900833657" target="_blank" rel="noopener">App Store</a>
+            <div class="project-desc">The most elegant way to track your menstrual cycle. Designed for iOS with support for 31 languages.</div>
           </div>
           <div class="project-card">
             <span class="project-name">Salary App</span> &middot;
-            <a href="https://itunes.apple.com/sg/app/salary-app/id892148298?mt=8" target="_blank" rel="noopener">App Store</a>
+            <a href="https://apps.apple.com/sg/app/salary-app/id892148298" target="_blank" rel="noopener">App Store</a>
+            <div class="project-desc">Discover how much your friends are earning. Share and compare salaries across your network.</div>
           </div>
           <div class="project-card">
             <span class="project-name">Flashwants</span> &middot;
@@ -469,11 +499,25 @@
           </div>
           <div class="project-card">
             <span class="project-name">BTT SG</span> &middot;
-            <a href="http://bit.ly/btt-sg" target="_blank" rel="noopener">View project</a>
+            <a href="https://apps.apple.com/sg/app/basic-theory-test-btt-sg/id530942747" target="_blank" rel="noopener">App Store</a>
+            <div class="project-desc">Singapore's Basic Theory Test prep app with 469 questions, practice modes, and simulated exams.</div>
+            <div class="project-stats">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+              <span>3.9 rating &middot; 165 ratings</span>
+            </div>
+            <div class="project-badge">Top #3 in App Store (Education) &middot; Featured &ldquo;What&rsquo;s Hot&rdquo; #1</div>
+            <div class="project-quote">&ldquo;All of the questions in the app are the same ones in BTT. Passed 50/50. Highly recommended!&rdquo;</div>
           </div>
           <div class="project-card">
             <span class="project-name">FTT SG</span> &middot;
-            <a href="http://bit.ly/ftt-sg" target="_blank" rel="noopener">View project</a>
+            <a href="https://apps.apple.com/sg/app/final-theory-test-singapore/id542975206" target="_blank" rel="noopener">App Store</a>
+            <div class="project-desc">Final Theory Test prep companion with 649 questions, practical route videos, and test date reminders.</div>
+            <div class="project-stats">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+              <span>3.9 rating &middot; 104 ratings</span>
+            </div>
+            <div class="project-badge">Featured on App Store (Education) &ldquo;What&rsquo;s New&rdquo; #1</div>
+            <div class="project-quote">&ldquo;I got 50/50 for my FTT on my first try and I only studied less than 24 hours before the test.&rdquo;</div>
           </div>
           <div class="project-card">
             <span class="project-name">iPad UAV Ground Control Station</span> &middot;
