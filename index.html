@@ -291,6 +291,103 @@
       margin-top: 4px;
     }
 
+    /* App Store Cards */
+    .app-card {
+      display: flex;
+      gap: 16px;
+      padding: 16px;
+      border: 1px solid var(--color-divider);
+      border-radius: 12px;
+      transition: border-color 0.2s;
+    }
+
+    .app-card:hover {
+      border-color: #ccc;
+    }
+
+    .app-card .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .app-card .app-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .app-card .app-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .app-card .app-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+
+    .app-card .app-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+    }
+
+    .app-card .app-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+    }
+
+    .app-card .app-rating .stars {
+      color: #f5a623;
+      letter-spacing: -1px;
+      font-size: 0.75rem;
+    }
+
+    .app-card .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      background: rgba(37, 99, 235, 0.06);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .app-card .app-store-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      transition: color 0.2s;
+    }
+
+    .app-card .app-store-link:hover {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .app-card .app-store-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
     /* Baking */
     .recipe-list {
       display: flex;
@@ -352,6 +449,16 @@
       .recipe-item {
         flex-direction: column;
         gap: 2px;
+      }
+
+      .app-card .app-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+      }
+
+      .app-card .app-meta {
+        gap: 6px 8px;
       }
 
       nav .nav-links {
@@ -511,16 +618,77 @@
       </div>
 
       <div class="project-group">
-        <h3>Personal</h3>
+        <h3>Personal &mdash; iOS Apps</h3>
         <div class="project-list">
-          <div class="project-card">
-            <span class="project-name">PeriodGo App</span> &middot;
-            <a href="https://itunes.apple.com/sg/app/periodgo/id900833657?mt=8" target="_blank" rel="noopener">App Store</a>
+          <div class="app-card">
+            <div class="app-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <div class="app-info">
+              <div class="app-name">Basic Theory Test (BTT SG)</div>
+              <div class="app-desc">Practice for Singapore's Basic Theory driving test with 469 questions in Learn, Practice, and Test modes.</div>
+              <div class="app-meta">
+                <span class="app-badge">Top #3 Education SG</span>
+                <span class="app-badge">What's Hot #1</span>
+                <a href="https://apps.apple.com/sg/app/basic-theory-test-btt-sg/id530942747" target="_blank" rel="noopener" class="app-store-link">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  App Store
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="project-card">
-            <span class="project-name">Salary App</span> &middot;
-            <a href="https://itunes.apple.com/sg/app/salary-app/id892148298?mt=8" target="_blank" rel="noopener">App Store</a>
+          <div class="app-card">
+            <div class="app-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+            </div>
+            <div class="app-info">
+              <div class="app-name">Final Theory Test Singapore (FTT SG)</div>
+              <div class="app-desc">Practice for Singapore's Final Theory driving test with 649 questions and detailed explanations.</div>
+              <div class="app-meta">
+                <span class="app-badge">Featured in Education</span>
+                <a href="https://apps.apple.com/sg/app/final-theory-test-singapore/id542975206" target="_blank" rel="noopener" class="app-store-link">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  App Store
+                </a>
+              </div>
+            </div>
           </div>
+          <div class="app-card">
+            <div class="app-icon" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+            </div>
+            <div class="app-info">
+              <div class="app-name">PeriodGo</div>
+              <div class="app-desc">The most elegant way to track your menstrual cycle. Beautifully designed period tracker with cycle predictions.</div>
+              <div class="app-meta">
+                <a href="https://apps.apple.com/sg/app/periodgo/id900833657" target="_blank" rel="noopener" class="app-store-link">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  App Store
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+            </div>
+            <div class="app-info">
+              <div class="app-name">Salary App</div>
+              <div class="app-desc">Find out how much your friends are earning. Compare salaries with friends and friends of friends.</div>
+              <div class="app-meta">
+                <a href="https://apps.apple.com/sg/app/salary-app/id892148298" target="_blank" rel="noopener" class="app-store-link">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  App Store
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-group">
+        <h3>Personal &mdash; Other</h3>
+        <div class="project-list">
           <div class="project-card">
             <span class="project-name">Flashwants</span> &middot;
             <a href="http://www.flashwants.com/" target="_blank" rel="noopener">flashwants.com</a>
@@ -528,14 +696,6 @@
           <div class="project-card">
             <span class="project-name">Ticktok</span> &middot;
             <a href="http://www.ticktok.com.sg" target="_blank" rel="noopener">ticktok.com.sg</a>
-          </div>
-          <div class="project-card">
-            <span class="project-name">BTT SG</span> &middot;
-            <a href="http://bit.ly/btt-sg" target="_blank" rel="noopener">View project</a>
-          </div>
-          <div class="project-card">
-            <span class="project-name">FTT SG</span> &middot;
-            <a href="http://bit.ly/ftt-sg" target="_blank" rel="noopener">View project</a>
           </div>
           <div class="project-card">
             <span class="project-name">iPad UAV Ground Control Station</span> &middot;
