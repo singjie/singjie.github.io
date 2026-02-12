@@ -19,15 +19,13 @@
     }
 
     :root {
-      --color-bg: #fafafa;
-      --color-surface: #ffffff;
-      --color-text: #2d2d2d;
-      --color-text-secondary: #5a5a5a;
-      --color-accent: #3a7bd5;
-      --color-accent-hover: #2c5fa8;
-      --color-border: #e0e0e0;
-      --color-tag-bg: #f0f4fa;
-      --max-width: 720px;
+      --color-bg: #ffffff;
+      --color-text: #1a1a1a;
+      --color-text-secondary: #6b6b6b;
+      --color-accent: #2563eb;
+      --color-accent-hover: #1d4ed8;
+      --color-divider: #eaeaea;
+      --max-width: 640px;
     }
 
     html {
@@ -60,10 +58,9 @@
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--color-border);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 100;
     }
 
@@ -78,10 +75,11 @@
     }
 
     nav .nav-name {
-      font-weight: 700;
-      font-size: 1.1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
       color: var(--color-text);
       text-decoration: none;
+      letter-spacing: -0.01em;
     }
 
     nav .nav-name:hover {
@@ -96,13 +94,13 @@
 
     nav .nav-links a {
       color: var(--color-text-secondary);
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.85rem;
+      font-weight: 400;
       text-decoration: none;
     }
 
     nav .nav-links a:hover {
-      color: var(--color-accent);
+      color: var(--color-text);
       text-decoration: none;
     }
 
@@ -116,8 +114,8 @@
 
     .hamburger span {
       display: block;
-      width: 22px;
-      height: 2px;
+      width: 20px;
+      height: 1.5px;
       background: var(--color-text);
       margin: 5px 0;
       transition: 0.3s;
@@ -132,37 +130,32 @@
     }
 
     section {
-      padding: 64px 0;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    section:last-of-type {
-      border-bottom: none;
+      padding: 56px 0;
     }
 
     /* Hero */
     .hero {
-      padding: 96px 0 64px;
+      padding: 80px 0 48px;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
       margin-bottom: 12px;
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     .hero .tagline {
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       color: var(--color-text-secondary);
-      margin-bottom: 24px;
-      line-height: 1.5;
+      margin-bottom: 28px;
+      line-height: 1.6;
     }
 
     .hero .social-links {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
@@ -171,18 +164,13 @@
       align-items: center;
       gap: 6px;
       color: var(--color-text-secondary);
-      font-size: 0.9rem;
-      padding: 6px 14px;
-      border: 1px solid var(--color-border);
-      border-radius: 6px;
-      transition: all 0.2s;
+      font-size: 0.85rem;
+      transition: color 0.2s;
     }
 
     .hero .social-links a:hover {
-      color: var(--color-accent);
-      border-color: var(--color-accent);
+      color: var(--color-text);
       text-decoration: none;
-      background: var(--color-tag-bg);
     }
 
     .hero .social-links svg {
@@ -193,64 +181,61 @@
 
     /* Section headings */
     section h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 32px;
-      letter-spacing: -0.01em;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
     }
 
     section h3 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     /* Interests */
     .interests-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px 16px;
     }
 
     .interest-tag {
-      padding: 8px 18px;
-      background: var(--color-tag-bg);
-      border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--color-text);
-      font-weight: 500;
     }
 
-    /* Education */
+    .interest-tag:not(:last-child)::after {
+      content: ",";
+    }
+
+    /* Education & Experience */
     .edu-list {
       display: flex;
       flex-direction: column;
-      gap: 28px;
-    }
-
-    .edu-item {
-      padding-left: 20px;
-      border-left: 3px solid var(--color-accent);
+      gap: 24px;
     }
 
     .edu-item h3 {
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .edu-item .degree {
       color: var(--color-text-secondary);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .edu-item .year {
       color: var(--color-text-secondary);
-      font-size: 0.85rem;
-      margin-top: 4px;
+      font-size: 0.8rem;
+      margin-top: 2px;
     }
 
     /* Projects */
     .project-group {
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
 
     .project-group:last-child {
@@ -258,35 +243,27 @@
     }
 
     .project-group h3 {
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       color: var(--color-text-secondary);
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       letter-spacing: 0.08em;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .project-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
     }
 
     .project-card {
-      padding: 16px 20px;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      transition: border-color 0.2s;
-    }
-
-    .project-card:hover {
-      border-color: var(--color-accent);
+      transition: color 0.2s;
     }
 
     .project-card .project-name {
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .project-card a {
@@ -295,52 +272,59 @@
     }
 
     .project-card .project-name-only {
-      font-weight: 600;
-      font-size: 1rem;
+      font-weight: 500;
+      font-size: 0.95rem;
       color: var(--color-text);
+    }
+
+    .project-card .project-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      margin-top: 2px;
+      line-height: 1.5;
+    }
+
+    .project-card .project-award {
+      font-size: 0.85rem;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-top: 4px;
     }
 
     /* Baking */
     .recipe-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .recipe-card {
-      padding: 20px;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
+    .recipe-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
     }
 
-    .recipe-card h3 {
-      margin-bottom: 8px;
-      font-size: 1rem;
+    .recipe-item h3 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0;
     }
 
-    .recipe-card a {
+    .recipe-item a {
       font-size: 0.85rem;
-      display: block;
-      margin-bottom: 4px;
-      word-break: break-all;
-    }
-
-    .recipe-card .note {
-      font-size: 0.85rem;
-      color: var(--color-text-secondary);
-      font-style: italic;
-      margin-top: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     /* Footer */
     footer {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 32px 24px;
+      padding: 48px 24px 32px;
       text-align: center;
       color: var(--color-text-secondary);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
     footer a {
@@ -350,23 +334,24 @@
     /* Responsive */
     @media (max-width: 600px) {
       .hero {
-        padding: 72px 0 48px;
+        padding: 64px 0 40px;
       }
 
       .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
       .hero .tagline {
-        font-size: 1.05rem;
+        font-size: 1rem;
       }
 
       section {
-        padding: 48px 0;
+        padding: 40px 0;
       }
 
-      .recipe-list {
-        grid-template-columns: 1fr;
+      .recipe-item {
+        flex-direction: column;
+        gap: 2px;
       }
 
       nav .nav-links {
@@ -376,10 +361,11 @@
         left: 0;
         right: 0;
         background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         flex-direction: column;
         padding: 16px 24px;
         gap: 16px;
-        border-bottom: 1px solid var(--color-border);
       }
 
       nav .nav-links.open {
@@ -516,9 +502,9 @@
         <h3>Volunteer</h3>
         <div class="project-list">
           <div class="project-card">
-            <span class="project-name">COVID-19 National Contact Tracing App</span><br>
-            <span style="font-size: 0.9rem; color: var(--color-text-secondary);">Led the NUS Computing team (recruited by A/P Ben Leong) that built Singapore's national contact tracing workflow management web app with SAF in under 3 weeks. System launched 1 June 2020 and handed over to MOH.</span><br>
-            <span style="font-size: 0.85rem; color: var(--color-accent); font-weight: 500;">Winner &ndash; Tech Heroes From Crisis Pathfinder Team, SCS IT Leader Awards 2021</span><br>
+            <span class="project-name">COVID-19 National Contact Tracing App</span>
+            <div class="project-desc">Led the NUS Computing team (recruited by A/P Ben Leong) that built Singapore's national contact tracing workflow management web app with SAF in under 3 weeks. System launched 1 June 2020 and handed over to MOH.</div>
+            <div class="project-award">Winner &ndash; Tech Heroes From Crisis Pathfinder Team, SCS IT Leader Awards 2021</div>
             <a href="https://www.comp.nus.edu.sg/news/2020-covid-contact-tracing/" target="_blank" rel="noopener">NUS Computing</a>
           </div>
         </div>
@@ -528,35 +514,35 @@
         <h3>Personal</h3>
         <div class="project-list">
           <div class="project-card">
-            <span class="project-name">PeriodGo App</span><br>
+            <span class="project-name">PeriodGo App</span> &middot;
             <a href="https://itunes.apple.com/sg/app/periodgo/id900833657?mt=8" target="_blank" rel="noopener">App Store</a>
           </div>
           <div class="project-card">
-            <span class="project-name">Salary App</span><br>
+            <span class="project-name">Salary App</span> &middot;
             <a href="https://itunes.apple.com/sg/app/salary-app/id892148298?mt=8" target="_blank" rel="noopener">App Store</a>
           </div>
           <div class="project-card">
-            <span class="project-name">Flashwants</span><br>
+            <span class="project-name">Flashwants</span> &middot;
             <a href="http://www.flashwants.com/" target="_blank" rel="noopener">flashwants.com</a>
           </div>
           <div class="project-card">
-            <span class="project-name">Ticktok</span><br>
+            <span class="project-name">Ticktok</span> &middot;
             <a href="http://www.ticktok.com.sg" target="_blank" rel="noopener">ticktok.com.sg</a>
           </div>
           <div class="project-card">
-            <span class="project-name">BTT SG</span><br>
+            <span class="project-name">BTT SG</span> &middot;
             <a href="http://bit.ly/btt-sg" target="_blank" rel="noopener">View project</a>
           </div>
           <div class="project-card">
-            <span class="project-name">FTT SG</span><br>
+            <span class="project-name">FTT SG</span> &middot;
             <a href="http://bit.ly/ftt-sg" target="_blank" rel="noopener">View project</a>
           </div>
           <div class="project-card">
-            <span class="project-name">iPad UAV Ground Control Station</span><br>
-            <a href="http://www.youtube.com/watch?v=fec5qvGooY0" target="_blank" rel="noopener">Watch on YouTube</a>
+            <span class="project-name">iPad UAV Ground Control Station</span> &middot;
+            <a href="http://www.youtube.com/watch?v=fec5qvGooY0" target="_blank" rel="noopener">YouTube</a>
           </div>
           <div class="project-card">
-            <span class="project-name">Wenyadesigns.com</span><br>
+            <span class="project-name">Wenyadesigns.com</span> &middot;
             <a href="http://www.wenyadesigns.com" target="_blank" rel="noopener">wenyadesigns.com</a>
           </div>
         </div>
@@ -566,23 +552,22 @@
     <!-- Baking -->
     <section id="baking">
       <h2>Baking</h2>
-      <p style="color: var(--color-text-secondary); margin-bottom: 24px;">Some of the recipes I have used.</p>
       <div class="recipe-list">
-        <div class="recipe-card">
+        <div class="recipe-item">
           <h3>New York Cheesecake</h3>
-          <a href="http://allrecipes.com/Recipe/Chantals-New-York-Cheesecake/Detail.aspx" target="_blank" rel="noopener">allrecipes.com</a>
+          <a href="http://allrecipes.com/Recipe/Chantals-New-York-Cheesecake/Detail.aspx" target="_blank" rel="noopener">Recipe</a>
         </div>
-        <div class="recipe-card">
+        <div class="recipe-item">
           <h3>Chocolate Cookie Cheesecake</h3>
-          <a href="http://allrecipes.com/Recipe/Chocolate-Cookie-Cheesecake/Detail.aspx" target="_blank" rel="noopener">allrecipes.com</a>
+          <a href="http://allrecipes.com/Recipe/Chocolate-Cookie-Cheesecake/Detail.aspx" target="_blank" rel="noopener">Recipe</a>
         </div>
-        <div class="recipe-card">
+        <div class="recipe-item">
           <h3>Chocolate Chip Muffins</h3>
-          <a href="http://allrecipes.com/Recipe/Chocolate-Chip-Muffins/Detail.aspx" target="_blank" rel="noopener">allrecipes.com</a>
+          <a href="http://allrecipes.com/Recipe/Chocolate-Chip-Muffins/Detail.aspx" target="_blank" rel="noopener">Recipe</a>
         </div>
-        <div class="recipe-card">
+        <div class="recipe-item">
           <h3>Chocolate Chip Cookies</h3>
-          <a href="http://allrecipes.com/Recipe/Award-Winning-Soft-Chocolate-Chip-Cookies/Detail.aspx" target="_blank" rel="noopener">allrecipes.com</a>
+          <a href="http://allrecipes.com/Recipe/Award-Winning-Soft-Chocolate-Chip-Cookies/Detail.aspx" target="_blank" rel="noopener">Recipe</a>
         </div>
       </div>
     </section>
