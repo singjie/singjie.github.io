@@ -15,10 +15,14 @@ singjie.github.io/
 ├── favicon.png      # Site favicon (16x16 PNG)
 ├── index.html       # Complete single-page site (~590 lines)
 ├── robots.txt       # Crawler configuration
-└── sitemap.xml      # XML sitemap for SEO
+├── sitemap.xml      # XML sitemap for SEO
+└── theorytest/
+    └── privacy.html # Privacy policy for the BTT SG and FTT SG apps
 ```
 
-There are no subdirectories, build folders, or dependency files. All HTML, CSS, and JavaScript live in `index.html`.
+Apart from `theorytest/privacy.html` (singjie.com/theorytest/privacy, the privacy policy the BTT SG and FTT SG
+App Store listings link to, styled like `index.html`), there are no subdirectories, build folders, or dependency
+files. All of the main page's HTML, CSS, and JavaScript live in `index.html`.
 
 ## Architecture
 
